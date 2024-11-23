@@ -8,26 +8,26 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ConexionesConfig {
-    @Value("${DB_SAKILA_URL}")
-    private String dbSakilaUrl;
+    @Value("${DB_WORLD_URL}")
+    private String dbWorldUrl;
 
-    @Value("${DB_SAKILA_USER}")
-    private String dbSakilaUser;
+    @Value("${DB_WORLD_USER}")
+    private String dbWorldUser;
 
-    @Value("${DB_SAKILA_PASS}")
-    private String dbSakilaPass;
+    @Value("${DB_WORLD_PASS}")
+    private String dbWorldPass;
 
-    @Value("${DB_SAKILA_DRIVER}")
-    private String dbSakilaDriver;
+    @Value("${DB_WORLD_DRIVER}")
+    private String dbWorldDriver;
 
     @Bean
     public HikariDataSource hikariDataSource() {
         HikariConfig hc = new HikariConfig();
 
-        hc.setJdbcUrl(dbSakilaUrl);
-        hc.setUsername(dbSakilaUser);
-        hc.setPassword(dbSakilaPass);
-        hc.setDriverClassName(dbSakilaDriver);
+        hc.setJdbcUrl(dbWorldUrl);
+        hc.setUsername(dbWorldUser);
+        hc.setPassword(dbWorldPass);
+        hc.setDriverClassName(dbWorldDriver);
 
         hc.setMaximumPoolSize(30);
         hc.setMinimumIdle(4);
